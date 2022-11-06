@@ -14,6 +14,7 @@ final ColorScheme appLightColorScheme = SeedColorScheme.fromSeeds(
   primaryKey: primaryBrandKeyColor,
   secondaryKey: secondaryBrandKeyColor,
   tertiaryKey: tertiaryBrandKeyColor,
+  primary: primaryBrandKeyColor,
 
   tones: FlexTones.vivid(Brightness.light),
 );
@@ -24,7 +25,7 @@ final ColorScheme appLightHCColorScheme = SeedColorScheme.fromSeeds(
   primaryKey: primaryBrandKeyColor,
   secondaryKey: secondaryBrandKeyColor,
   tertiaryKey: tertiaryBrandKeyColor,
-
+  primary: primaryBrandKeyColor,
   tones: FlexTones.highContrast(Brightness.light),
 );
 
@@ -34,7 +35,7 @@ final ColorScheme appDarkColorScheme = SeedColorScheme.fromSeeds(
   primaryKey: primaryBrandKeyColor,
   secondaryKey: secondaryBrandKeyColor,
   tertiaryKey: tertiaryBrandKeyColor,
-
+  primary: primaryBrandKeyColor,
   tones: FlexTones.vivid(Brightness.dark),
 );
 
@@ -44,6 +45,6 @@ final ColorScheme appDarkHCColorScheme = SeedColorScheme.fromSeeds(
   primaryKey: primaryBrandKeyColor,
   secondaryKey: secondaryBrandKeyColor,
   tertiaryKey: tertiaryBrandKeyColor,
-
+  primary: primaryBrandKeyColor,
   tones: FlexTones.highContrast(Brightness.dark),
 );

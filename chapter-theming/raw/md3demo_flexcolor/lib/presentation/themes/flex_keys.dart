@@ -16,6 +16,6 @@ const FlexKeyColors appFlexKeyColors = FlexKeyColors(
   useSecondary: true,
   useTertiary: true,
   keepPrimary: true,
-  keepSecondary: true,
-  keepTertiary: true,
+  keepSecondary: false,
+  keepTertiary: false,
 );
