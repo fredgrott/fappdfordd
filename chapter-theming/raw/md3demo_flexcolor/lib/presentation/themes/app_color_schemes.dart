@@ -7,6 +7,7 @@
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:md3demo_flexcolor/presentation/themes/app_brand_seed_colors.dart';
+import 'package:md3demo_flexcolor/presentation/themes/flex_tones.dart';
 
 final ColorScheme appLightColorScheme = SeedColorScheme.fromSeeds(
   brightness: Brightness.light,
@@ -16,7 +17,7 @@ final ColorScheme appLightColorScheme = SeedColorScheme.fromSeeds(
   tertiaryKey: tertiaryBrandKeyColor,
   primary: primaryBrandKeyColor,
 
-  tones: FlexTones.vivid(Brightness.light),
+  tones: appFlexTonesVivid(Brightness.light),
 );
 
 final ColorScheme appLightHCColorScheme = SeedColorScheme.fromSeeds(
@@ -26,7 +27,7 @@ final ColorScheme appLightHCColorScheme = SeedColorScheme.fromSeeds(
   secondaryKey: secondaryBrandKeyColor,
   tertiaryKey: tertiaryBrandKeyColor,
   primary: primaryBrandKeyColor,
-  tones: FlexTones.highContrast(Brightness.light),
+  tones: appFlexTonesHighContrast(Brightness.light),
 );
 
 final ColorScheme appDarkColorScheme = SeedColorScheme.fromSeeds(
@@ -36,7 +37,7 @@ final ColorScheme appDarkColorScheme = SeedColorScheme.fromSeeds(
   secondaryKey: secondaryBrandKeyColor,
   tertiaryKey: tertiaryBrandKeyColor,
   primary: primaryBrandKeyColor,
-  tones: FlexTones.vivid(Brightness.dark),
+  tones: appFlexTonesVivid(Brightness.dark),
 );
 
 final ColorScheme appDarkHCColorScheme = SeedColorScheme.fromSeeds(
@@ -46,5 +47,5 @@ final ColorScheme appDarkHCColorScheme = SeedColorScheme.fromSeeds(
   secondaryKey: secondaryBrandKeyColor,
   tertiaryKey: tertiaryBrandKeyColor,
   primary: primaryBrandKeyColor,
-  tones: FlexTones.highContrast(Brightness.dark),
+  tones: appFlexTonesHighContrast(Brightness.dark),
 );

@@ -14,10 +14,12 @@ import 'package:md3demo_flexcolor/presentation/features/components/component_scr
 import 'package:md3demo_flexcolor/presentation/features/components/navigation_stuff.dart';
 import 'package:md3demo_flexcolor/presentation/features/elevation/elevation_screen.dart';
 import 'package:md3demo_flexcolor/presentation/features/typography/typography_screen.dart';
-import 'package:md3demo_flexcolor/presentation/themes/app_color_schemes.dart';
 import 'package:md3demo_flexcolor/presentation/themes/app_text_themes.dart';
 import 'package:md3demo_flexcolor/presentation/themes/flex_keys.dart';
 import 'package:md3demo_flexcolor/presentation/themes/flex_sub_themes_data.dart';
+import 'package:md3demo_flexcolor/presentation/themes/flex_tones.dart';
+
+late ThemeData internalThemeData;
 
 class MyApp extends StatefulWidget {
   @override
@@ -116,142 +118,123 @@ class _MyAppState extends State<MyApp> {
   ThemeData updateThemes(
     int themeSelectedMode,
   ) {
-    late ThemeData internalThemeData;
-
-    if (themeSelectedMode == 0) {
-      internalThemeData = FlexThemeData.light(
-        colorScheme: appLightColorScheme,
-        usedColors: 6,
-        surfaceMode: FlexSurfaceMode.highBackgroundLowScaffold,
-        blendLevel: 10,
-        appBarStyle: FlexAppBarStyle.primary,
-        appBarOpacity: 1,
-        transparentStatusBar: true,
-        appBarElevation: 0,
-        bottomAppBarElevation: 0,
-        tabBarStyle: FlexTabBarStyle.forAppBar,
-        lightIsWhite: false,
-        swapColors: false,
-        tooltipsMatchBackground: false,
-        subThemesData: appLightFlexSubThemesData,
-        keyColors: appFlexKeyColors,
-        useMaterial3ErrorColors: false,
-        useMaterial3: true,
-        tones: FlexTones.vivid(Brightness.light),
-        typography: Typography.material2021(),
-        textTheme: appLightTextTheme,
-        primaryTextTheme: appLightTextTheme,
-        visualDensity: VisualDensity.comfortable,
-        applyElevationOverlayColor: true,
-      ).copyWith(
-        navigationRailTheme: NavigationRailThemeData(
-          selectedIconTheme: IconThemeData(
-            color: appLightColorScheme.onPrimaryContainer,
+    if (appColorSchemesList[themeSelectedMode].brightness == Brightness.light) {
+      if (themeSelectedMode == 0) {
+        internalThemeData = FlexThemeData.light(
+          colorScheme: appColorSchemesList[themeSelectedMode],
+          usedColors: 6,
+          surfaceMode: FlexSurfaceMode.highBackgroundLowScaffold,
+          blendLevel: 10,
+          appBarStyle: FlexAppBarStyle.primary,
+          appBarOpacity: 1,
+          transparentStatusBar: true,
+          appBarElevation: 0,
+          bottomAppBarElevation: 0,
+          tabBarStyle: FlexTabBarStyle.forAppBar,
+          lightIsWhite: false,
+          swapColors: false,
+          tooltipsMatchBackground: false,
+          subThemesData: appFlexSubThemesData,
+          keyColors: appFlexKeyColors,
+          useMaterial3ErrorColors: false,
+          tones: appFlexTonesVivid(
+            appColorSchemesList[themeSelectedMode].brightness,
           ),
-        ),
-      );
-    }
-
-    if (themeSelectedMode == 1) {
-      internalThemeData = FlexThemeData.light(
-        colorScheme: appLightHCColorScheme,
-        usedColors: 6,
-        surfaceMode: FlexSurfaceMode.highBackgroundLowScaffold,
-        blendLevel: 10,
-        appBarStyle: FlexAppBarStyle.primary,
-        appBarOpacity: 1,
-        transparentStatusBar: true,
-        appBarElevation: 0,
-        bottomAppBarElevation: 0,
-        tabBarStyle: FlexTabBarStyle.forAppBar,
-        lightIsWhite: false,
-        swapColors: false,
-        tooltipsMatchBackground: false,
-        subThemesData: appLightFlexSubThemesData,
-        keyColors: appFlexKeyColors,
-        useMaterial3ErrorColors: false,
-        useMaterial3: true,
-        tones: FlexTones.highContrast(Brightness.light),
-        typography: Typography.material2021(),
-        textTheme: appLightTextTheme,
-        primaryTextTheme: appLightTextTheme,
-        visualDensity: VisualDensity.comfortable,
-        applyElevationOverlayColor: true,
-      ).copyWith(
-        navigationRailTheme: NavigationRailThemeData(
-          selectedIconTheme: IconThemeData(
-            color: appLightHCColorScheme.onPrimaryContainer,
+          visualDensity: VisualDensity.comfortable,
+          textTheme: selectTextTheme(themeSelectedMode),
+          primaryTextTheme: selectTextTheme(themeSelectedMode),
+          typography: Typography.material2021(),
+          applyElevationOverlayColor: true,
+          useMaterial3: true,
+        );
+      }
+      if (themeSelectedMode == 1) {
+        internalThemeData = FlexThemeData.light(
+          colorScheme: appColorSchemesList[themeSelectedMode],
+          usedColors: 6,
+          surfaceMode: FlexSurfaceMode.highBackgroundLowScaffold,
+          blendLevel: 10,
+          appBarStyle: FlexAppBarStyle.primary,
+          appBarOpacity: 1,
+          transparentStatusBar: true,
+          appBarElevation: 0,
+          bottomAppBarElevation: 0,
+          tabBarStyle: FlexTabBarStyle.forAppBar,
+          lightIsWhite: false,
+          swapColors: false,
+          tooltipsMatchBackground: false,
+          subThemesData: appFlexSubThemesData,
+          keyColors: appFlexKeyColors,
+          useMaterial3ErrorColors: false,
+          tones: appFlexTonesHighContrast(
+            appColorSchemesList[themeSelectedMode].brightness,
           ),
-        ),
-      );
-    }
-
-    if (themeSelectedMode == 2) {
-      internalThemeData = FlexThemeData.dark(
-        colorScheme: appDarkColorScheme,
-        usedColors: 6,
-        surfaceMode: FlexSurfaceMode.highBackgroundLowScaffold,
-        blendLevel: 10,
-        appBarStyle: FlexAppBarStyle.primary,
-        appBarOpacity: 1,
-        transparentStatusBar: true,
-        appBarElevation: 0,
-        bottomAppBarElevation: 0,
-        tabBarStyle: FlexTabBarStyle.forAppBar,
-        darkIsTrueBlack: false,
-        swapColors: false,
-        tooltipsMatchBackground: false,
-        subThemesData: appDarkFlexSubThemesData,
-        keyColors: appFlexKeyColors,
-        useMaterial3ErrorColors: false,
-        useMaterial3: true,
-        tones: FlexTones.vivid(Brightness.dark),
-        typography: Typography.material2021(),
-        textTheme: appDarkTextTheme,
-        primaryTextTheme: appDarkTextTheme,
-        visualDensity: VisualDensity.comfortable,
-        applyElevationOverlayColor: true,
-      ).copyWith(
-        navigationRailTheme: NavigationRailThemeData(
-          selectedIconTheme: IconThemeData(
-            color: appDarkColorScheme.onPrimaryContainer,
+          visualDensity: VisualDensity.comfortable,
+          textTheme: selectTextTheme(themeSelectedMode),
+          primaryTextTheme: selectTextTheme(themeSelectedMode),
+          typography: Typography.material2021(),
+          applyElevationOverlayColor: true,
+          useMaterial3: true,
+        );
+      }
+      if (themeSelectedMode == 2) {
+        internalThemeData = FlexThemeData.dark(
+          colorScheme: appColorSchemesList[themeSelectedMode],
+          usedColors: 6,
+          surfaceMode: FlexSurfaceMode.highBackgroundLowScaffold,
+          blendLevel: 10,
+          appBarStyle: FlexAppBarStyle.primary,
+          appBarOpacity: 1,
+          transparentStatusBar: true,
+          appBarElevation: 0,
+          bottomAppBarElevation: 0,
+          tabBarStyle: FlexTabBarStyle.forAppBar,
+          darkIsTrueBlack: false,
+          swapColors: false,
+          tooltipsMatchBackground: false,
+          subThemesData: appFlexSubThemesData,
+          keyColors: appFlexKeyColors,
+          useMaterial3ErrorColors: false,
+          tones: appFlexTonesVivid(
+            appColorSchemesList[themeSelectedMode].brightness,
           ),
-        ),
-      );
-    }
-
-    if (themeSelectedMode == 3) {
-      internalThemeData = FlexThemeData.dark(
-        colorScheme: appDarkHCColorScheme,
-        usedColors: 6,
-        surfaceMode: FlexSurfaceMode.highBackgroundLowScaffold,
-        blendLevel: 10,
-        appBarStyle: FlexAppBarStyle.primary,
-        appBarOpacity: 1,
-        transparentStatusBar: true,
-        appBarElevation: 0,
-        bottomAppBarElevation: 0,
-        tabBarStyle: FlexTabBarStyle.forAppBar,
-        darkIsTrueBlack: false,
-        swapColors: false,
-        tooltipsMatchBackground: false,
-        subThemesData: appDarkFlexSubThemesData,
-        keyColors: appFlexKeyColors,
-        useMaterial3ErrorColors: false,
-        useMaterial3: true,
-        tones: FlexTones.highContrast(Brightness.dark),
-        typography: Typography.material2021(),
-        textTheme: appDarkTextTheme,
-        primaryTextTheme: appDarkTextTheme,
-        visualDensity: VisualDensity.comfortable,
-        applyElevationOverlayColor: true,
-      ).copyWith(
-        navigationRailTheme: NavigationRailThemeData(
-          selectedIconTheme: IconThemeData(
-            color: appDarkHCColorScheme.onPrimaryContainer,
+          visualDensity: VisualDensity.comfortable,
+          textTheme: selectTextTheme(themeSelectedMode),
+          primaryTextTheme: selectTextTheme(themeSelectedMode),
+          typography: Typography.material2021(),
+          applyElevationOverlayColor: true,
+          useMaterial3: true,
+        );
+      }
+      if (themeSelected == 3) {
+        internalThemeData = FlexThemeData.dark(
+          colorScheme: appColorSchemesList[themeSelectedMode],
+          usedColors: 6,
+          surfaceMode: FlexSurfaceMode.highBackgroundLowScaffold,
+          blendLevel: 10,
+          appBarStyle: FlexAppBarStyle.primary,
+          appBarOpacity: 1,
+          transparentStatusBar: true,
+          appBarElevation: 0,
+          bottomAppBarElevation: 0,
+          tabBarStyle: FlexTabBarStyle.forAppBar,
+          darkIsTrueBlack: false,
+          swapColors: false,
+          tooltipsMatchBackground: false,
+          subThemesData: appFlexSubThemesData,
+          keyColors: appFlexKeyColors,
+          useMaterial3ErrorColors: false,
+          tones: appFlexTonesHighContrast(
+            appColorSchemesList[themeSelectedMode].brightness,
           ),
-        ),
-      );
+          visualDensity: VisualDensity.comfortable,
+          textTheme: selectTextTheme(themeSelectedMode),
+          primaryTextTheme: selectTextTheme(themeSelectedMode),
+          typography: Typography.material2021(),
+          applyElevationOverlayColor: true,
+          useMaterial3: true,
+        );
+      }
     }
 
     return internalThemeData;
