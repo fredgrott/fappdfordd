@@ -12,6 +12,8 @@
 
 import 'package:devops_lint_metrics/domain/entities/divider.dart';
 import 'package:devops_lint_metrics/domain/entities/narrow_screen_width.dart';
+import 'package:devops_lint_metrics/presentation/features/color/scheme_label.dart';
+import 'package:devops_lint_metrics/presentation/features/color/scheme_view.dart';
 import 'package:devops_lint_metrics/presentation/themes/app_schemes.dart';
 import 'package:flutter/material.dart';
 
@@ -37,24 +39,9 @@ class ColorPalettesScreen extends StatelessWidget {
       useMaterial3: true,
     );
 
-    Widget schemeLabel(String brightness) {
-      return Padding(
-        padding: const EdgeInsets.symmetric(vertical: 15),
-        child: Text(
-          brightness,
-          style: const TextStyle(fontWeight: FontWeight.bold),
-        ),
-      );
-    }
+    
 
-    Widget schemeView(ThemeData theme) {
-      return Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15),
-        child: ColorSchemeView(
-          colorScheme: theme.colorScheme,
-        ),
-      );
-    }
+    
 
     return Expanded(
       child: LayoutBuilder(
@@ -67,17 +54,17 @@ class ColorPalettesScreen extends StatelessWidget {
               child: Column(
                 children: [
                   divider,
-                  schemeLabel('Light Theme'),
-                  schemeView(pageLightTheme),
+                  SchemeLabel(brightness: "Light Theme",),
+                  SchemeView(theme: pageLightTheme),
                   divider,
-                  schemeLabel('Light HC Theme'),
-                  schemeView(pageLightHCTheme),
+                  SchemeLabel(brightness: 'Light HC Theme'),
+                  SchemeView(theme: pageLightHCTheme),
                   divider,
-                  schemeLabel('Dark Theme'),
-                  schemeView(pageDarkTheme),
+                  SchemeLabel(brightness: 'Dark Theme'),
+                  SchemeView(theme: pageDarkTheme),
                   divider,
-                  schemeLabel('Dark HC Theme'),
-                  schemeView(pageDarkHCTheme),
+                  SchemeLabel(brightness: 'Dark HC Theme'),
+                  SchemeView(theme: pageDarkHCTheme),
                 ],
               ),
             );
@@ -90,32 +77,32 @@ class ColorPalettesScreen extends StatelessWidget {
                     Expanded(
                       child: Column(
                         children: [
-                          schemeLabel('Light Theme'),
-                          schemeView(pageLightTheme),
+                          SchemeLabel(brightness: 'Light Theme'),
+                          SchemeView(theme: pageLightTheme),
                         ],
                       ),
                     ),
                     Expanded(
                       child: Column(
                         children: [
-                          schemeLabel('Light HC Theme'),
-                          schemeView(pageLightHCTheme),
+                          SchemeLabel(brightness: 'Light HC Theme'),
+                          SchemeView(theme: pageLightHCTheme),
                         ],
                       ),
                     ),
                     Expanded(
                       child: Column(
                         children: [
-                          schemeLabel('Dark Theme'),
-                          schemeView(pageDarkTheme),
+                          SchemeLabel(brightness: 'Dark Theme'),
+                          SchemeView(theme: pageDarkTheme),
                         ],
                       ),
                     ),
                     Expanded(
                       child: Column(
                         children: [
-                          schemeLabel('Dark HC Theme'),
-                          schemeView(pageDarkHCTheme),
+                          SchemeLabel(brightness: 'Dark HC Theme'),
+                          SchemeView(theme: pageDarkHCTheme),
                         ],
                       ),
                     ),

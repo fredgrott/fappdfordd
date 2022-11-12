@@ -9,6 +9,8 @@
 // crossplatform functionality which pertains to such
 // widgets as CircleProgressIndicator.
 
+// ignore_for_file: avoid_positional_boolean_parameters
+
 import 'package:flutter/material.dart';
 
 ButtonStyle enabledFilledButtonStyle(

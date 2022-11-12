@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite errors="0" failures="0" tests="5" skipped="0" name="D:.fredgrttsstuff.GithubProjects.fappdfordd.chapter_apparch.clean_arch.begin_cleanarch_eq.test.models" timestamp="2022-11-12T13:06:37">
+    <properties>
+      <property name="platform" value="vm"/>
+    </properties>
+    <testcase classname="D:.fredgrttsstuff.GithubProjects.fappdfordd.chapter_apparch.clean_arch.begin_cleanarch_eq.test.models" name="Enum Tests Screen Selected" time="0.014"/>
+    <testcase classname="D:.fredgrttsstuff.GithubProjects.fappdfordd.chapter_apparch.clean_arch.begin_cleanarch_eq.test.models" name="Constants Tests Card Width" time="0.004"/>
+    <testcase classname="D:.fredgrttsstuff.GithubProjects.fappdfordd.chapter_apparch.clean_arch.begin_cleanarch_eq.test.models" name="Constants Tests Max Width Constraint" time="0.005"/>
+    <testcase classname="D:.fredgrttsstuff.GithubProjects.fappdfordd.chapter_apparch.clean_arch.begin_cleanarch_eq.test.models" name="Models Tests Color Scheme Models Tests" time="0.005"/>
+    <testcase classname="D:.fredgrttsstuff.GithubProjects.fappdfordd.chapter_apparch.clean_arch.begin_cleanarch_eq.test.models" name="Models Tests Theme Title Model Test" time="0.004"/>
+  </testsuite>
+</testsuites>

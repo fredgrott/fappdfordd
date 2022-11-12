@@ -6,11 +6,10 @@
 import 'package:devops_lint_metrics/domain/entities/color_schemes_list.dart';
 import 'package:devops_lint_metrics/domain/entities/narrow_screen_width.dart';
 import 'package:devops_lint_metrics/domain/entities/screen_selected.dart';
-import 'package:devops_lint_metrics/presentation/features/color/color_palettes_screen.dart';
-import 'package:devops_lint_metrics/presentation/features/components/component_screen.dart';
+import 'package:devops_lint_metrics/presentation/features/app/create_screen_for.dart';
+
 import 'package:devops_lint_metrics/presentation/features/components/navigation_stuff.dart';
-import 'package:devops_lint_metrics/presentation/features/elevation/elevation_screen.dart';
-import 'package:devops_lint_metrics/presentation/features/typography/typography_screen.dart';
+
 import 'package:devops_lint_metrics/presentation/themes/app_text_themes.dart';
 import 'package:devops_lint_metrics/presentation/themes/semantic_colors.dart';
 import 'package:flutter/material.dart';
@@ -44,7 +43,7 @@ class _MyAppState extends State<MyApp> {
               appBar: createAppBar(),
               body: Row(
                 children: <Widget>[
-                  createScreenFor(ScreenSelected.values[screenIndex], false),
+                  CreateScreenFor(screenSelected: ScreenSelected.values[screenIndex],showNavBarExample: false,),
                 ],
               ),
               bottomNavigationBar: NavigationBars(
@@ -72,7 +71,7 @@ class _MyAppState extends State<MyApp> {
                       thickness: 1,
                       width: 1,
                     ),
-                    createScreenFor(ScreenSelected.values[screenIndex], true),
+                    CreateScreenFor(screenSelected: ScreenSelected.values[screenIndex],showNavBarExample: true,),
                   ],
                 ),
               ),
@@ -152,23 +151,7 @@ class _MyAppState extends State<MyApp> {
     return myTextTheme;
   }
 
-  Widget createScreenFor(
-    ScreenSelected screenSelected,
-    bool showNavBarExample,
-  ) {
-    switch (screenSelected) {
-      case ScreenSelected.component:
-        return ComponentScreen(showNavBottomBar: showNavBarExample);
-      case ScreenSelected.color:
-        return const ColorPalettesScreen();
-      case ScreenSelected.typography:
-        return const TypographyScreen();
-      case ScreenSelected.elevation:
-        return const ElevationScreen();
-      default:
-        return ComponentScreen(showNavBottomBar: showNavBarExample);
-    }
-  }
+  
 
   PreferredSizeWidget createAppBar() {
     return AppBar(

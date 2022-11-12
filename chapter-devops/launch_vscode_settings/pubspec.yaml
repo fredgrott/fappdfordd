@@ -31,6 +31,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  google_fonts: ^3.0.1
+  material_color_utilities: ^0.2.0
+
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -40,13 +43,11 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  # dart code metrics and extra lints
+  dart_code_metrics: ^5.0.1
+  # better lint
+  lint: ^1.10.0
 
-  # The "flutter_lints" package below contains a set of recommended lints to
-  # encourage good coding practices. The lint set provided by the package is
-  # activated in the `analysis_options.yaml` file located at the root of your
-  # package. See that file for information about deactivating specific lint
-  # rules and activating additional ones.
-  flutter_lints: ^2.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -63,6 +64,9 @@ flutter:
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/images/
+    - assets/google_fonts/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -111,7 +111,7 @@ class ElevationGrid extends StatelessWidget {
             return GridView.count(
               shrinkWrap: true,
               crossAxisCount: 3,
-              children: elevationCards(shadowColor, surfaceTintColor),
+              children: elevationCards(shadowColor, surfaceTintColor,),
             );
           } else {
             return GridView.count(
@@ -208,14 +208,18 @@ class _ElevationCardState extends State<ElevationCard> {
 }
 
 class ElevationInfo {
+  final int level;
+  final double elevation;
+  final int overlayPercent;
+
+
+
   const ElevationInfo(
     this.level,
     this.elevation,
     this.overlayPercent,
   );
-  final int level;
-  final double elevation;
-  final int overlayPercent;
+  
 }
 
 const List<ElevationInfo> elevations = <ElevationInfo>[

@@ -76,14 +76,14 @@ dart_code_metrics:
      - avoid-missing-enum-constant-in-map
      - avoid-non-ascii-symbols
      - avoid-non-null-assertion
-     - avoid-apssing-async-when-sync-expectted
+     - avoid-passing-async-when-sync-expected
      - avoid-throw-in-catch-block
-     - avoid-top-level-memebrs-in-tests
+     - avoid-top-level-members-in-tests
      - avoid-unnecessary-type-assertions
      - avoid-unnecessary-type-casts
      - avoid-unrelated-type-assertions
      - avoid-unused-parameters
-     - binary-expresssion-operand-order
+     - binary-expression-operand-order
      - double-literal-format
      - format-comment:
         ignored-patterns:
@@ -147,7 +147,7 @@ dart_code_metrics:
           - allowedAnnotation
      - avoid-shrink-wrap-in-lists
      - avoid-unnecessary-setstate
-     - avoid-use-expanded-as-spacer
+     - avoid-expanded-as-spacer
      - avoid-wrapping-in-padding
      - prefer-const-border-radius
      - prefer-correct-edge-insets-constructor

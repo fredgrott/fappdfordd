@@ -102,7 +102,7 @@ class _NavigationBarsState extends State<NavigationBars> {
   }
 
   //
-  // ignore: member-ordering-extended
+  // ignore: member-ordering
   @override
   Widget build(BuildContext context) {
     return NavigationBar(
@@ -145,7 +145,7 @@ class _NavigationRailSectionState extends State<NavigationRailSection> {
   }
 
   //
-  // ignore: member-ordering-extended
+  // ignore: member-ordering
   @override
   Widget build(BuildContext context) {
     return NavigationRail(
